@@ -1,0 +1,41 @@
+{% extends 'main/layout.html' %}
+
+{% block title%}Main page{% endblock %}
+
+{% block content%}
+
+{% for el in styles %}
+<div class="items-area" id="item-area-{{ el.id }}">
+
+
+    <meta name="csrf-token" content="{{ csrf_token }}">
+
+    <div class="item" id="item-{{ el.id }}">
+        <p class="name-style">{{ el.nameStyle }}</p>
+        <form id="form-{{ el.id }}" method="post">
+            {% csrf_token %}
+            <textarea name="codeHTML-{{ el.id }}" class="input-text input-data-edit input-data-edit-{{ el.id }}">{{ el.codeHTML }}</textarea>
+            <textarea name="codeCSS-{{ el.id }}" class="input-text input-data-edit input-data-edit-{{ el.id }}">{{ el.codeCSS }}</textarea>
+            <textarea name="codeJS-{{ el.id }}" class="input-text input-data-edit input-data-edit-{{ el.id }}">{{ el.codeJS }}</textarea>
+        </form>
+        <style>
+        {{ el.codeCSS|safe }}
+        </style>
+        {{ el.codeHTML|safe }}
+        <p class="date-creation">Создано: {{ el.dateCreation }}</p>
+
+    </div>
+    <div class="buttons">
+        <button class="btn-item btn-edit" id="btn-edit-{{ el.id }}" title="Редактировать">&#9998;</button>
+        <button form="form-{{ el.id }}" class="btn-item btn-save" id="btn-save-{{ el.id }}" type="submit" title="Сохранить">&#10004;</button>
+        <button class="btn-item btn-cancel" id="btn-cancel-{{ el.id }}" title="Отменить">&#8634;</button>
+        <button class="btn-item btn-del" id="btn-del-{{ el.id }}" title="Удалить">&#10008;</button>
+    </div>
+
+
+
+</div>
+{% endfor %}
+
+
+{% endblock %}
