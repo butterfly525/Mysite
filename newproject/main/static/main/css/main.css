@@ -124,6 +124,15 @@ aside:hover {
   color: #9d89a6;
 }
 
+.items-area {
+  display: flex;
+  margin-top: 20px;
+}
+
+.items-area:last-child {
+  margin-bottom: 20px;
+}
+
 .item {
   position: relative;
   min-width: 400px;
@@ -132,11 +141,6 @@ aside:hover {
   border: solid 2px #001f59;
   color: #cfc1cd;
   padding: 10px;
-}
-
-.items-area {
-  display: flex;
-  margin-top: 20px;
 }
 
 .buttons {

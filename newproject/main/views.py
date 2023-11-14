@@ -26,8 +26,6 @@ def nav_aside_item(request):
     return render(request, 'main/layout.html', {'styles': style_card})
 
 
-def about(request):
-    return render(request, 'main/about.html')
 
 
 def view_form(request):
