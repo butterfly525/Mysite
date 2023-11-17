@@ -44,6 +44,9 @@ $(document).ready(function() {
         $('#btn-save-' + id).show();
         $('#btn-cancel-' + id).show();
         $('.input-data-edit-' + id).show();
+        $('[name="codeHTML-'+ id+'"]').css('height', $('[name="codeHTML-'+ id+'"]')[0].scrollHeight + 3 + 'px');
+        $('[name="codeCSS-'+ id+'"]').css('height', $('[name="codeCSS-'+ id+'"]')[0].scrollHeight + 3 + 'px');
+        $('[name="codeJS-'+ id+'"]').css('height', $('[name="codeJS-'+ id+'"]')[0].scrollHeight + 3 + 'px');
     });
 
     $('.btn-save').click(function(e) {
@@ -103,4 +106,18 @@ $(document).ready(function() {
         var id = $(this).attr('id').replace('btn-cancel-', '');
 
     });
+    $(window).on('scroll', function() {
+        if ($(window).scrollTop() > 300) {
+            $('#btn-up').css('opacity', '1');
+            $('#btn-up').css('pointer-events', 'auto');
+        } else {
+            $('#btn-up').css('opacity', '0');
+            $('#btn-up').css('pointer-events', 'none');
+        }
+    });
+    $('#btn-up').on('click', function() {
+        $('html, body').animate({scrollTop:0}, 50);
+    });
+
+  
 });

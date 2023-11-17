@@ -1,0 +1,15 @@
+{% extends 'main/layout.html' %}
+{% block title%}Login{% endblock %}
+{% block content %}
+<div>
+  <h4>Вход в систему</h4>
+
+  <form method="post">
+      {% csrf_token %}
+
+      {{ form }}
+
+      <button type="submit">Войти</button>
+  </form>
+</div>
+{% endblock %}

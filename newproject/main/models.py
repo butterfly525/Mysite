@@ -1,6 +1,6 @@
 from django.db import models
+from django.contrib.auth import get_user_model
 
-# Create your models here.
 
 class StyleCard(models.Model):
     nameStyle = models.CharField('Название', max_length=50)
@@ -16,3 +16,5 @@ class StyleCard(models.Model):
         verbose_name = 'Карточка стиля'  #единственное число названия класса для отображения на русском языке
         verbose_name_plural = 'Карточки стилей' #единственное число названия класса для отображения на русском языке
 
+
+User = get_user_model()

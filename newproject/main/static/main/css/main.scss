@@ -1,8 +1,8 @@
-$color1: #00003c;
-$color2: #001f59;
-$color3: #5d4e7e;
-$color4: #9d89a6;
-$color5: #cfc1cd;
+$color1: rgb(0, 0, 60);
+$color2: rgb(0, 31, 89);
+$color3: rgb(93, 78, 126);
+$color4: rgb(157, 137, 166);
+$color5: rgb(207, 193, 205);
 
 
 body{
@@ -10,9 +10,15 @@ body{
     background: $color1;
     margin: 0;
     padding: 0;
+    font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+    background-image: url("../img/background_img.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
 }
 
 #container{
+    
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -20,35 +26,41 @@ body{
 }
 
 main{
-    margin: 0 150px;
+    margin: 90px 150px 0;
     width: 70%;
 }
 
 #nav-bar{
+    position: fixed;
     height: 90px;
     width: 100%;
-    background-color: $color2;
-    padding: 0 180px;
+    background-color: rgb(0, 31, 89, 0.8);
+    padding: 0 130px;
     color: $color5;
     display: flex;
     align-items: center;
     justify-content: flex-end;
     flex-direction: row;
     flex-wrap: wrap;
+    z-index: 90;
 }
 
 #nav-bar-links a{
-    padding-left: 15px;
+    padding-left: 20px;
     transition: color 0.3s ease;
-
+    
 }
 
 #nav-bar-links a:hover{
     color: $color4;
 }
 
+.welcome-text{
+    padding-left: 20px;
+}
+
 .input-text {
-    padding: 2px;
+    padding: 5px;
     width: 100%;
     background-color: $color5;
     color: $color1;
@@ -57,8 +69,9 @@ main{
 }
 
 .input-data-edit{
-    resize: vertical;
+    // resize: vertical;
     display: none;
+    height: auto;
 }
 
 #input-search{
@@ -77,12 +90,13 @@ main{
 aside{
     width: 300px;
     height: 100%;
-    background: $color5;
+    background: rgb(207, 193, 205, 0.95);
     position: fixed;
     left: -225px;
     color: $color2;
     transition: left 0.5s ease;
     z-index: 100;
+    border-radius: 15px;
 }
 
 aside:hover{
@@ -137,6 +151,10 @@ aside:hover{
 .items-area{
     display: flex;
     margin-top: 20px;
+    background-color: rgb(0, 31, 89, 0.8);
+    padding: 15px;
+    border-radius: 15px;
+    
 }
 
 .items-area:last-child{
@@ -148,7 +166,6 @@ aside:hover{
     min-width: 400px;
     width: 100%;
     height: auto;
-    border: solid 2px $color2;
     color: $color5;
     padding: 10px;
 }
@@ -164,10 +181,10 @@ aside:hover{
 }
 
 .btn-item{
-    margin: 0 5px;
+    margin: 0 7px;
     width: 21px;
-    font-size: 28px;
-    opacity: 0.5;
+    font-size: 32px;
+    opacity: 0.7;
     transition: opacity 0.3s ease;
 }
 
@@ -192,4 +209,22 @@ aside:hover{
 .btn-del{
     color: #FF99AD;
 }
+
+#btn-up {
+    position: fixed;
+    bottom: 25px;
+    right: 25px;
+    font-size: 35px;
+    color: $color3;
+    background-color: rgb(157, 137, 166, 0.4);
+    padding: 0 18px 4px 18px;
+    border-radius: 50%;
+    box-shadow:
+    0 0 11px $color3,
+    0 0 20px $color4,
+    0 0 35px $color4;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+   }
 

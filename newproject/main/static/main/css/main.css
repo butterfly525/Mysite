@@ -1,8 +1,13 @@
 body {
   font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
-  background: #00003c;
+  background: rgb(0, 0, 60);
   margin: 0;
   padding: 0;
+  font-family: Avantgarde, TeX Gyre Adventor, URW Gothic L, sans-serif;
+  background-image: url("../img/background_img.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
 }
 
 #container {
@@ -13,44 +18,50 @@ body {
 }
 
 main {
-  margin: 0 150px;
+  margin: 90px 150px 0;
   width: 70%;
 }
 
 #nav-bar {
+  position: fixed;
   height: 90px;
   width: 100%;
-  background-color: #001f59;
-  padding: 0 180px;
-  color: #cfc1cd;
+  background-color: rgba(0, 31, 89, 0.8);
+  padding: 0 130px;
+  color: rgb(207, 193, 205);
   display: flex;
   align-items: center;
   justify-content: flex-end;
   flex-direction: row;
   flex-wrap: wrap;
+  z-index: 90;
 }
 
 #nav-bar-links a {
-  padding-left: 15px;
+  padding-left: 20px;
   transition: color 0.3s ease;
 }
 
 #nav-bar-links a:hover {
-  color: #9d89a6;
+  color: rgb(157, 137, 166);
+}
+
+.welcome-text {
+  padding-left: 20px;
 }
 
 .input-text {
-  padding: 2px;
+  padding: 5px;
   width: 100%;
-  background-color: #cfc1cd;
-  color: #00003c;
+  background-color: rgb(207, 193, 205);
+  color: rgb(0, 0, 60);
   border-radius: 6px;
   margin: 3px 0;
 }
 
 .input-data-edit {
-  resize: vertical;
   display: none;
+  height: auto;
 }
 
 #input-search {
@@ -68,12 +79,13 @@ main {
 aside {
   width: 300px;
   height: 100%;
-  background: #cfc1cd;
+  background: rgba(207, 193, 205, 0.95);
   position: fixed;
   left: -225px;
-  color: #001f59;
+  color: rgb(0, 31, 89);
   transition: left 0.5s ease;
   z-index: 100;
+  border-radius: 15px;
 }
 
 aside:hover {
@@ -100,7 +112,7 @@ aside:hover {
   left: 245px;
   padding: 3px 10px 5px 10px;
   border-radius: 10px;
-  color: #5d4e7e;
+  color: rgb(93, 78, 126);
   transition: color 0.3s ease;
   transition: background 0.3s ease;
 }
@@ -117,16 +129,19 @@ aside:hover {
   margin: 5px 0;
 }
 #navigation li:hover {
-  color: #9d89a6;
+  color: rgb(157, 137, 166);
   cursor: pointer;
 }
 #navigation a:hover {
-  color: #9d89a6;
+  color: rgb(157, 137, 166);
 }
 
 .items-area {
   display: flex;
   margin-top: 20px;
+  background-color: rgba(0, 31, 89, 0.8);
+  padding: 15px;
+  border-radius: 15px;
 }
 
 .items-area:last-child {
@@ -138,8 +153,7 @@ aside:hover {
   min-width: 400px;
   width: 100%;
   height: auto;
-  border: solid 2px #001f59;
-  color: #cfc1cd;
+  color: rgb(207, 193, 205);
   padding: 10px;
 }
 
@@ -154,10 +168,10 @@ aside:hover {
 }
 
 .btn-item {
-  margin: 0 5px;
+  margin: 0 7px;
   width: 21px;
-  font-size: 28px;
-  opacity: 0.5;
+  font-size: 32px;
+  opacity: 0.7;
   transition: opacity 0.3s ease;
 }
 
@@ -181,6 +195,21 @@ aside:hover {
 
 .btn-del {
   color: #FF99AD;
+}
+
+#btn-up {
+  position: fixed;
+  bottom: 25px;
+  right: 25px;
+  font-size: 35px;
+  color: rgb(93, 78, 126);
+  background-color: rgba(157, 137, 166, 0.4);
+  padding: 0 18px 4px 18px;
+  border-radius: 50%;
+  box-shadow: 0 0 11px rgb(93, 78, 126), 0 0 20px rgb(157, 137, 166), 0 0 35px rgb(157, 137, 166);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
 }
 
 /*# sourceMappingURL=main.css.map */
