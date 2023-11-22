@@ -9,6 +9,7 @@
     "build": "npx tailwindcss -i main/static/main/css/input.css -o main/static/main/css/output.css"
   },
   "dependencies": {
+    "sass": "^1.69.5",
     "vue": "^3.3.8"
   }
 }
